@@ -27,22 +27,22 @@
 	CGFloat arrowMargin;
 }
 
-@property(nonatomic, retain) NSString *bgImageName;
-@property(nonatomic, retain) NSString *upArrowImageName;
-@property(nonatomic, retain) NSString *downArrowImageName;
-@property(nonatomic, retain) NSString *leftArrowImageName;
-@property(nonatomic, retain) NSString *rightArrowImageName;
-@property(nonatomic, assign) CGFloat leftBgMargin;
-@property(nonatomic, assign) CGFloat rightBgMargin;
-@property(nonatomic, assign) CGFloat topBgMargin;
-@property(nonatomic, assign) CGFloat bottomBgMargin;
-@property(nonatomic, assign) CGFloat leftContentMargin;
-@property(nonatomic, assign) CGFloat rightContentMargin;
-@property(nonatomic, assign) CGFloat topContentMargin;
-@property(nonatomic, assign) CGFloat bottomContentMargin;
-@property(nonatomic, assign) NSInteger topBgCapSize;
-@property(nonatomic, assign) NSInteger leftBgCapSize;
-@property(nonatomic, assign) CGFloat arrowMargin;
+@property(nonatomic, strong) NSString *bgImageName;
+@property(nonatomic, strong) NSString *upArrowImageName;
+@property(nonatomic, strong) NSString *downArrowImageName;
+@property(nonatomic, strong) NSString *leftArrowImageName;
+@property(nonatomic, strong) NSString *rightArrowImageName;
+@property(nonatomic) CGFloat leftBgMargin;
+@property(nonatomic) CGFloat rightBgMargin;
+@property(nonatomic) CGFloat topBgMargin;
+@property(nonatomic) CGFloat bottomBgMargin;
+@property(nonatomic) CGFloat leftContentMargin;
+@property(nonatomic) CGFloat rightContentMargin;
+@property(nonatomic) CGFloat topContentMargin;
+@property(nonatomic) CGFloat bottomContentMargin;
+@property(nonatomic) NSInteger topBgCapSize;
+@property(nonatomic) NSInteger leftBgCapSize;
+@property(nonatomic) CGFloat arrowMargin;
 
 @end
 
@@ -76,7 +76,7 @@
 /**
  * @brief The content view being displayed.
  */
-@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, strong) UIView *contentView;
 
 /**
  * @brief Initializes the position of the popover with a size, anchor rect, display area and permitted arrow directions and optionally the properties. 
