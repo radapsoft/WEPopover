@@ -22,7 +22,7 @@
 /**
  * @brief Popover controller for the iPhone, mimicing the iPad UIPopoverController interface. See that class for more details.
  */
-@interface WEPopoverController : NSObject<WETouchableViewDelegate> {
+@interface WEPopoverController : NSObject<WETouchableViewDelegate, UIPopoverControllerDelegate> {
 	UIViewController *contentViewController;
 	UIView *view;
 	WETouchableView *backgroundView;
@@ -32,7 +32,10 @@
 	CGSize popoverContentSize;
 	WEPopoverContainerViewProperties *containerViewProperties;
 	id <NSObject> context;
-	NSArray *passthroughViews;	
+	NSArray *passthroughViews;
+    
+    // Where UIPopoverController is available... use it!
+    UIPopoverController*        iosPopover;
 }
 
 @property(nonatomic, strong) UIViewController *contentViewController;
@@ -59,8 +62,9 @@
 	  permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections 
 					  animated:(BOOL)animated;
 
-- (void)repositionPopoverFromRect:(CGRect)rect
-						   inView:(UIView *)view
-		 permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections;
+// Not supported by UIPopoverController!
+//- (void)repositionPopoverFromRect:(CGRect)rect
+//						   inView:(UIView *)view
+//		 permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections;
 
 @end
