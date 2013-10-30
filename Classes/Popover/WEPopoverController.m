@@ -173,7 +173,7 @@
         [self dismissPopoverAnimated:NO];
         
         //First force a load view for the contentViewController so the popoverContentSize is properly initialized
-        UIView*		contentViewObj	= [contentViewController view];
+        [contentViewController view];
         
         if (CGSizeEqualToSize(popoverContentSize, CGSizeZero)) {
             popoverContentSize = contentViewController.contentSizeForViewInPopover;
@@ -318,7 +318,7 @@
 		if (animated) {
 			
 			self.view.userInteractionEnabled = NO;
-			[UIView beginAnimations:@"FadeOut" context:(__bridge_retained void*)[NSNumber numberWithBool:userInitiated]];
+			[UIView beginAnimations:@"FadeOut" context:(__bridge void*)[NSNumber numberWithBool:userInitiated]];
 			[UIView setAnimationDelegate:self];
 			[UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
 			
